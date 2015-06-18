@@ -5,7 +5,8 @@
   margin: 0;
 
   header {
-    background-color: #607D8B;
+    background-color: $primary-color;
+    color: #fff;
   }
 
   nav {
@@ -14,7 +15,7 @@
 
   footer {
     width: 100%;
-    background-color: #607D8B;
+    background-color: $primary-color;
     padding: 15px 0;
 
     position: absolute;
@@ -23,7 +24,7 @@
   }
 
   main {
-
+    color: $secondary-text-color;
   }
 
   .section {
