@@ -1,0 +1,41 @@
+<head>
+  <title>app</title>
+</head>
+
+<body>
+</body>
+
+<template name="mainLayout">
+    <div class="wrapper">
+        <header>
+            <div class="section">
+                <h1>Welcome to FapMasterRevenge!</h1>
+            </div>
+        </header>
+
+        <nav>
+            <div class="section">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/room">Room</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="section">
+            <div class="section">
+                {{> yield "template"}}
+            </div>
+        </main>
+
+        <footer>
+            <div class="section">
+
+            </div>
+        </footer>
+    </div>
+</template>
+
+
+
+
