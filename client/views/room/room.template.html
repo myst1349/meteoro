@@ -1,21 +1,21 @@
 <template name="room">
-    <div class="section">
+    <div class="section roles">
         <!--TO-DO: default: guest, otherwise player/spectator -->
-        <p>Your status: {{ visitor.status }}</p>
+        <p>Your status: {{ status }}</p>
 
         <p>Choose your role</p>
         <ul>
             <li>
-                <button>Player 1</button>
+                <button class="roles__btn" data-player="1">Player 1</button>
             </li>
             <li>
-                <button>Player 2</button>
+                <button class="roles__btn" data-player="2">Player 2</button>
             </li>
             <li>
-                <button>Player 3</button>
+                <button class="roles__btn" data-player="3">Player 3</button>
             </li>
             <li>
-                <button>Spectator</button>
+                <button class="roles__btn" data-player="0">Spectator</button>
             </li>
         </ul>
     </div>

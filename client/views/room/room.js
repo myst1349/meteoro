@@ -1,16 +1,42 @@
 
-// counter starts at 0
-Session.setDefault('counter', 0);
 
 Template.room.helpers({
-  counter: function () {
-    return Session.get('counter');
+  status: function() {
+    var role = Session.get('player');
+
+    function status(role) {
+      console.log(role);
+      switch (role) {
+        case undefined:
+          return 'guest';
+          break;
+        case '0':
+          return 'spectator';
+          break;
+        case '1':
+        case '2':
+        case '3':
+          return 'Player ' + role;
+          break;
+      }
+    }
+
+    return status(role);
   }
+
 });
 
 Template.room.events({
-  'click button': function () {
-    // increment the counter when button is clicked
-    Session.set('counter', Session.get('counter') + 1);
+  'click .roles__btn': function (event) {
+
+    /**
+     * Set session player role from data-player
+     * TO-DO: persistent session storage
+     */
+    if (Session.get('player') === undefined) {
+      Session.set('player', event.target.dataset.player);
+      $(event.currentTarget).addClass('roles__btn--active');
+    }
+
   }
 });
