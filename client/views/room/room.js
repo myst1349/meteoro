@@ -5,13 +5,12 @@ Template.room.helpers({
     var role = Session.get('player');
 
     function status(role) {
-      console.log(role);
       switch (role) {
         case undefined:
-          return 'guest';
+          return 'Guest';
           break;
         case '0':
-          return 'spectator';
+          return 'Spectator';
           break;
         case '1':
         case '2':
