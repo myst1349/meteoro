@@ -1,6 +1,9 @@
 
-
+/**
+ * Helpers
+ */
 Template.room.helpers({
+
   status: function() {
     var role = Session.get('player');
 
@@ -15,6 +18,7 @@ Template.room.helpers({
         case '1':
         case '2':
         case '3':
+          $('[data-player="' + role + '"]').addClass('.role__btn--active');
           return 'Player ' + role;
           break;
       }
@@ -25,6 +29,10 @@ Template.room.helpers({
 
 });
 
+
+/**
+ * Events
+ */
 Template.room.events({
   'click .roles__btn': function (event) {
 
@@ -38,4 +46,14 @@ Template.room.events({
     }
 
   }
+});
+
+
+/**
+ * Execute on template render
+ */
+Template.room.onRendered(function() {
+  var role = Session.get('player');
+
+  $('[data-player="' + role + '"]').addClass('roles__btn--active');
 });
