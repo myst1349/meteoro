@@ -1,7 +1,21 @@
 <template name="home">
     <div class="section">
+
         <button>Click Me</button>
         <p>You've pressed the button {{counter}} times.</p>
-        <p><a href="/room/{{urlId}}"><button>Start</button></a></p>
+
+        <hr>
+
+            <p>Rooms:</p>
+            <ul>
+                {{#each rooms}}
+                <li><a href="/room/{{id}}">{{id}}</a></li>
+                {{/each}}
+            </ul>
+
+        <hr>
+
+        <p><a href="/room/{{urlId}}"><button>Create new room</button></a></p>
+
     </div>
 </template>

@@ -8,6 +8,10 @@ Template.home.helpers({
     return Math.random().toString(36).substr(2, 9);
   },
 
+  rooms: function () {
+    return Room.find({});
+  },
+
   counter: function () {
     return Session.get('counter');
   }
