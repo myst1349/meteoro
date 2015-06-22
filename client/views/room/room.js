@@ -18,7 +18,6 @@ Template.room.helpers({
         case '1':
         case '2':
         case '3':
-          $('[data-player="' + role + '"]').addClass('.role__btn--active');
           return 'Player ' + role;
           break;
       }
